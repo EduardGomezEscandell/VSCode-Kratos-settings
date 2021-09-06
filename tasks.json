@@ -2,25 +2,40 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "build",
+            "label": "Build",
             "type": "shell",
-            "command": "${workspaceFolder}\\scripts\\custom_configure.bat",
             "group": "build",
             "presentation": {
                 "reveal": "always",
                 "clear": true
             },
-            "problemMatcher": "$msCompile",
-            "options": {
-                "cwd": "${workspaceFolder}",
-                "env": {
-                    "KRATOS_BUILD_TYPE" : "${input:BuildType}",
-                    "KRATOS_SOURCE"     : "${workspaceFolder}",
-                    "KRATOS_BUILD"      : "${workspaceFolder}/build",
-                    "KRATOS_APP_DIR"    : "${workspaceFolder}/applications",
-                    "BOOST_ROOT"        : "C:\\Work\\boost_1_77_0"
-                }
+            "windows" : {
+                "command": "${workspaceFolder}/scripts/custom_configure.bat",
+                "problemMatcher": "$msCompile",
+                "options": {
+                    "cwd": "${workspaceFolder}",
+                    "env": {
+                        "KRATOS_BUILD_TYPE" : "${input:BuildType}",
+                        "KRATOS_SOURCE"     : "${workspaceFolder}",
+                        "KRATOS_BUILD"      : "${workspaceFolder}/build",
+                        "KRATOS_APP_DIR"    : "${workspaceFolder}/applications",
+                        "BOOST_ROOT"        : "${workspaceFolder}/../boost_1_77_0"
+                    }
+                },
             },
+            "linux" : {
+                "command": "sh ${workspaceFolder}/scripts/custom_configure.sh",
+                "problemMatcher": "$gcc",
+                "options": {
+                    "cwd": "${workspaceFolder}",
+                    "env": {
+                        "KRATOS_BUILD_TYPE" : "${input:BuildType}",
+                        "KRATOS_SOURCE"     : "${workspaceFolder}",
+                        "KRATOS_BUILD"      : "${workspaceFolder}/build",
+                        "KRATOS_APP_DIR"    : "${workspaceFolder}/applications",
+                    }
+                }
+            }
         }
     ],
     "inputs": [
