@@ -33,6 +33,7 @@
                         "KRATOS_SOURCE"     : "${workspaceFolder}",
                         "KRATOS_BUILD"      : "${workspaceFolder}/build",
                         "KRATOS_APP_DIR"    : "${workspaceFolder}/applications",
+                        "KRATOS_USE_MPI"    : "OFF"
                     }
                 }
             }
@@ -43,6 +44,7 @@
             "id": "BuildType",
             "type": "pickString",
             "description": "What compiler options do you want to build with?",
+            "default": "Release",
             "options": [
                 "Release",
                 "RelWithDebInfo",
