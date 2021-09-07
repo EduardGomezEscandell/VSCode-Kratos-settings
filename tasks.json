@@ -10,7 +10,7 @@
                 "clear": true
             },
             "windows" : {
-                "command": "${workspaceFolder}/.vscode/custom_configure.bat",
+                "command": "${workspaceFolder}/.vscode/build/custom_configure.bat",
                 "problemMatcher": "$msCompile",
                 "options": {
                     "cwd": "${workspaceFolder}",
@@ -24,7 +24,7 @@
                 },
             },
             "linux" : {
-                "command": "sh ${workspaceFolder}/.vscode/custom_configure.sh",
+                "command": "sh ${workspaceFolder}/.vscode/build/custom_configure.sh",
                 "problemMatcher": "$gcc",
                 "options": {
                     "cwd": "${workspaceFolder}",
