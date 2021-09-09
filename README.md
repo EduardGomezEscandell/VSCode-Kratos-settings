@@ -9,4 +9,4 @@ You may need to restart Visual Studio Code for `tasks.json` to be properly parse
 On windows, you may need to change `"BOOST_ROOT"        : "${workspaceFolder}/../boost_1_77_0"` to the location of your boost source.
 
 ## How to use
-You can compile anyime with `Ctrl`+`Shift`+`B`. A list will appear with build options, select the one you want and hit enter. KratosMultiphysics should compile without any issues so long as you followed the correct install process.
+You can compile anytime with `Ctrl`+`Shift`+`B`. A list will appear with build options, select the one you want and hit enter. KratosMultiphysics should compile without any issues so long as you followed the correct install process.
