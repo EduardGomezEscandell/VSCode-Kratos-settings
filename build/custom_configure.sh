@@ -20,10 +20,10 @@ export KRATOS_USE_MPI=${KRATOS_USE_MPI:-"OFF"}
 
 # Set applications to compile
 export KRATOS_APPLICATIONS=
-add_app ${KRATOS_APP_DIR}/LinearSolversApplication
-add_app ${KRATOS_APP_DIR}/StructuralMechanicsApplication
-add_app ${KRATOS_APP_DIR}/FluidDynamicsApplication
-add_app ${KRATOS_APP_DIR}/RomApplication
+for var in "$@"
+do
+    add_app ${KRATOS_APP_DIR}/$var
+done
 
 # Clean
 clear
@@ -34,7 +34,6 @@ rm -rf "${KRATOS_BUILD}/${KRATOS_BUILD_TYPE}/CMakeFiles"
 # Configure
 cmake -H"${KRATOS_SOURCE}" -B"${KRATOS_BUILD}/${KRATOS_BUILD_TYPE}"     \
 -DUSE_EIGEN_MKL=OFF                                                     \
--DCMAKE_CXX_FLAGS="${KRATOS_CMAKE_CXX_FLAGS} -Wall -Wextra -Wpedantic"  \
 -DCMAKE_UNITY_BUILD=ON                                                  \
 -DUSE_MPI=${KRATOS_USE_MPI}
 

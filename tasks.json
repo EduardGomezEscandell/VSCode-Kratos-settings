@@ -24,7 +24,14 @@
                 },
             },
             "linux" : {
-                "command": "sh ${workspaceFolder}/.vscode/build/custom_configure.sh",
+                "command": "sh",
+                "args" : [
+                    "${workspaceFolder}/.vscode/build/custom_configure.sh",
+                    "LinearSolversApplication",
+                    "StructuralMechanicsApplication",
+                    "FluidDynamicsApplication",
+                    "CompressiblePotentialFlowApplication"
+                ],
                 "problemMatcher": "$gcc",
                 "options": {
                     "cwd": "${workspaceFolder}",
@@ -37,6 +44,16 @@
                     }
                 }
             }
+        },
+        {
+            "label": "Test",
+            "type": "shell",
+            "group": "test",
+            "presentation": {
+                "reveal": "always",
+                "clear": false
+            },
+            "command": "${workspaceFolder}/.vscode/test/run_test_cpp.py"
         }
     ],
     "inputs": [
