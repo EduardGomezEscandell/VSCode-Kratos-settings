@@ -77,5 +77,13 @@
     "python.linting.pylintEnabled": true,
     "python.linting.pylintArgs": [
         "--rcfile=.vscode/pylintrc"
-    ]
+    ],
+    "files.exclude": {
+        "bin/**": true,
+        "build/**": true
+    },
+    "C_Cpp.autocompleteAddParentheses": true,
+    "C_Cpp.default.cppStandard": "c++11",
+    "C_Cpp.default.intelliSenseMode": "linux-gcc-x86",
+    "C_Cpp.vcFormat.newLine.beforeOpenBrace.namespace": "sameLine"
 }
