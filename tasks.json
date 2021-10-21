@@ -27,8 +27,8 @@
                 "command": "sh",
                 "args" : [
                     "${workspaceFolder}/.vscode/build/custom_configure.sh",
-                    "LinearSolversApplication",
-                    "StructuralMechanicsApplication",
+                    // "LinearSolversApplication",
+                    // "StructuralMechanicsApplication",
                     "FluidDynamicsApplication",
                     "CompressiblePotentialFlowApplication"
                 ],
